@@ -1,0 +1,245 @@
+/* Import */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Variables */
+:root {
+  /* Fonts */
+  --sans-serif: "Poppins", sans-serif;
+  --serif: "Playfair Display", serif;
+
+  /* Colors */
+  --primary: #864879;
+  --secondary: #e9a6a6;
+  --dark-alt: #1f1d36;
+  --dark: #090621;
+  --light: #ffffff;
+  --light-alt: #f4fcfc;
+
+  /* Shadow */
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Default */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+*::selection {
+  background: var(--dark);
+  color: var(--light-alt);
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--sans-serif);
+  background: var(--dark-alt);
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+b,
+i,
+u,
+ul,
+ol,
+li,
+span {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+img,
+video {
+  width: 100%;
+}
+p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-alt);
+}
+
+/* Main */
+.content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px;
+  background: var(--dark-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  position: relative;
+}
+.sequencer {
+  width: 60%;
+  background: var(--dark);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border-bottom: 5px solid var(--light-alt);
+}
+
+.track {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 30px;
+}
+.track:last-child {
+  margin-bottom: 0;
+}
+.track .options {
+  width: 250px;
+}
+.track .options h5 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--light);
+  margin-bottom: 10px;
+}
+.track .options div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.track .options select {
+  width: 180px;
+  height: 40px;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  background: #3a384d;
+  box-shadow: var(--shadow);
+  color: var(--light-alt);
+  font-size: 14px;
+  border: 0;
+  outline: 0;
+}
+.track .options button {
+  outline: 0;
+  border: 0;
+  color: var(--light);
+  margin-left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background: #3a384d;
+  box-shadow: var(--shadow);
+  text-align: center;
+  line-height: 40px;
+  transition: 0.5s ease all;
+}
+.track .options button.active {
+  background: var(--dark-alt);
+}
+.track .options button i {
+  pointer-events: none;
+}
+.track .steps {
+  width: calc(100% - 320px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.track .steps .pad {
+  width: 30px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--primary);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: 0.5s ease all;
+}
+.track .steps .pad.active {
+  background: var(--secondary);
+}
+
+.controls {
+  width: 40%;
+  text-align: center;
+}
+.controls h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--light);
+  margin-bottom: 50px;
+}
+.controls button {
+  width: 70px;
+  height: 70px;
+  background: var(--primary);
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 70px;
+  font-size: 25px;
+  box-shadow: var(--shadow);
+  color: var(--dark);
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: 0.5s ease all;
+}
+.controls button.active {
+  background: var(--secondary);
+}
+.controls .tempo {
+  width: 100%;
+  margin: auto;
+}
+.controls .tempo input {
+  width: 70%;
+  cursor: pointer;
+  appearance: none;
+  background: #3a384d;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  position: relative;
+}
+.controls .tempo p {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--light-alt);
+  margin-top: 15px;
+}
+.controls .tempo p b {
+  font-weight: 700;
+  margin-left: 15px;
+  font-size: 25px;
+}
+
+/* Keyframes */
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
